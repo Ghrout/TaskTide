@@ -1,0 +1,171 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #202124;
+  font-family: "Poppins", sans-serif;
+  color: #f9f9f9;
+}
+
+button {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: 500;
+  padding-left: 20px;
+  margin: 22px 0;
+}
+
+.overlay {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s;
+}
+
+body.open .overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.burger {
+  position: fixed;
+  z-index: 3;
+  top: 20px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+@media (max-width: 500px) {
+  .burger {
+    display: flex;
+  }
+}
+
+.burger-avatar {
+  width: 60px;
+  height: 60px;
+  transition: 0.4s;
+  border-radius: 100%;
+}
+
+body.open .burger-avatar {
+  translate: 40px 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.burger-icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-image: url("../assets/icon-burger.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: #ffffff; /* Cambia el color aquí */
+}
+
+body.open .burger-icon {
+  background-image: url("../assets/icon-close.svg");
+  color: #ff0000; /* Cambia el color aquí para el icono de cierre */
+}
+
+.sidebar {
+  position: fixed; /* Cambiado a fixed para que esté siempre visible */
+  z-index: 2;
+  top: 0;
+  left: 0; /* Cambiado a left para mostrar a la izquierda */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 250px; /* Ajusta según tu diseño */
+  height: 100%;
+  padding: 40px 20px;
+  background: #6200ff85;
+  opacity: 0;
+  visibility: hidden;
+  filter: blur(10px);
+  transition: opacity 0.6s, visibility 0.6s, filter 0.6s;
+}
+
+body.open .sidebar {
+  opacity: 1;
+  visibility: visible;
+  filter: blur(0);
+}
+
+.sidebar-avatar {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+  border-radius: 100%;
+}
+
+.sidebar-username {
+  text-align: center;
+  margin: 0;
+  font-size: 25px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.sidebar-role {
+  margin: 0 0 20px;
+  font-size: 9px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.57);
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.sidebar-menu > button {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px; /* Ajustado para mayor claridad */
+  line-height: 1;
+  padding: 10px 20px;
+}
+
+.sidebar-menu > button > img {
+  width: 37px;
+  height: 37px;
+}
+
+.sidebar-menu > button > span {
+  color: #f9f9f9;
+  font-size: 15px;
+}
+
+.avatar {
+  width: 64px; /* Cambia a tu tamaño preferido */
+  height: 64px; /* Cambia a tu tamaño preferido */
+  border-radius: 50%; /* Esto hace que la imagen sea redonda */
+  border: 2px solid #D1D5DB; /* Color del borde */
+}
+

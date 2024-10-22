@@ -1,0 +1,91 @@
+.input-container {
+  position: relative;
+  margin: 50px auto;
+  width: 100%; /* Ajusta el ancho según sea necesario */
+}
+
+.input-container input[type="text"],
+.input-container input[type="email"],
+.input-container input[type="password"] {
+  font-size: 20px;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #000;
+  padding: 5px 0;
+  background-color: transparent;
+  outline: none;
+  transition: border-bottom-color 0.3s ease; /* Añade una transición para el efecto */
+  color: #000;
+}
+
+.input-container .label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #000;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.input-container input[type="text"]:focus ~ .label,
+.input-container input[type="text"]:valid ~ .label,
+.input-container input[type="email"]:focus ~ .label,
+.input-container input[type="email"]:valid ~ .label,
+.input-container input[type="password"]:focus ~ .label,
+.input-container input[type="password"]:valid ~ .label {
+  top: -20px;
+  font-size: 16px;
+  color: #3a3838b0;
+}
+
+.input-container .underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #3a3838b0;
+  transform: scaleX(0);
+  transition: all 0.3s ease;
+}
+
+.input-container input[type="text"]:focus ~ .underline,
+.input-container input[type="text"]:valid ~ .underline,
+.input-container input[type="email"]:focus ~ .underline,
+.input-container input[type="email"]:valid ~ .underline,
+.input-container input[type="password"]:focus ~ .underline,
+.input-container input[type="password"]:valid ~ .underline {
+  transform: scaleX(1);
+}
+
+/* Hover effect */
+.input-container input[type="text"]:hover ~ .underline,
+.input-container input[type="email"]:hover ~ .underline,
+.input-container input[type="password"]:hover ~ .underline {
+  background-color: #3a3838b0; /* Color del subrayado en hover */
+}
+
+.input-container input[type="text"]:hover ~ .label,
+.input-container input[type="email"]:hover ~ .label,
+.input-container input[type="password"]:hover ~ .label {
+  color: #3a3838b0; /* Color de la etiqueta en hover */
+}
+
+/* Cambiar el color del borde en hover */
+.input-container input[type="text"]:hover,
+.input-container input[type="email"]:hover,
+.input-container input[type="password"]:hover {
+  border-bottom: 2px solid #3a3838b0; /* Color del borde en hover */
+}
+
+/* Estilo para el icono de ver/ocultar la contraseña */
+.input-container .toggle-password-visibility {
+  font-size: 20px; /* Tamaño del icono */
+  color: #3a3838b0; /* Color del icono */
+  pointer-events: auto; /* Asegúrate de que sea clicable */
+  position: absolute;
+  right: 10px; /* Ajusta la posición horizontal según sea necesario */
+  top: 10px; /* Ajusta la posición vertical según sea necesario */
+  z-index: 10; /* Asegúrate de que esté por encima de otros elementos */
+  cursor: pointer; /* Cambia el cursor a pointer para indicar que es clicable */
+}
