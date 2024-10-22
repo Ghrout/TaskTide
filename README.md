@@ -1,3 +1,5 @@
+![TaskTide](https://github.com/user-attachments/assets/684f7dbf-3db6-49e7-a0fc-70560403f4e1)
+
 # TaskTide
 
 **TaskTide** es una potente aplicación de gestión de tareas que permite a los usuarios crear, actualizar y eliminar tareas de manera eficiente. Con un diseño moderno y funcionalidades intuitivas, TaskTide facilita la organización y el seguimiento de tareas diarias.
