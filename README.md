@@ -75,45 +75,6 @@ Taskide es una potente aplicación de gestión de tareas que permite a los usuar
 - Accede a la aplicación en `http://localhost:3000`.
 - Regístrate o inicia sesión para comenzar a gestionar tus tareas de manera eficiente.
 
-## Requerimientos
-
-### Backend (Laravel)
-
-- **Crear una API RESTful** para gestionar las tareas.
-- **Implementar autenticación JWT** para asegurar el acceso a las rutas.
-- **Crear endpoints** para las operaciones CRUD de tareas (crear, leer, actualizar, eliminar).
-- **Validar los datos de entrada** en los controladores.
-- **Crear un modelo de base de datos** adecuado para usuarios y tareas.
-- **Implementar paginación** en la lista de tareas.
-- **Añadir filtros** para buscar tareas por estado y prioridad.
-- **Notificar vía correo electrónico** al responsable de la actividad si la prioridad es alta.
-
-### Frontend (React y Next.js)
-
-- **Implementar una interfaz de usuario** para gestionar las tareas.
-- **Implementar autenticación y registro de usuarios**.
-- **Consumir la API de Laravel** para realizar las operaciones CRUD.
-- **Manejar el estado de la aplicación** usando Redux o Context API.
-- **Utilizar Next.js** para la navegación y SSR (Server-Side Rendering).
-- **Implementar paginación** en la lista de tareas.
-- **Añadir filtros** para buscar tareas por estado y prioridad.
-
-## Datos Requeridos
-
-### Para registrar un usuario:
-
-- Nombre completo
-- Correo electrónico
-- Contraseña
-
-### Para registrar una tarea:
-
-- Título de la tarea
-- Descripción de la tarea
-- Fecha límite
-- Estado de la tarea (pendiente, en progreso, completada)
-- Prioridad de la tarea (opcional)
-
 ## Contribución
 
 ¡Las contribuciones son bienvenidas! Si deseas contribuir a Taskide, sigue estos pasos:
