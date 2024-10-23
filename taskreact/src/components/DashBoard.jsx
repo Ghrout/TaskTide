@@ -24,6 +24,7 @@ const Dashboard = () => {
   const [filteredTasks, setFilteredTasks] = useState([]); // Inicializa el estado de las tareas filtradas como un array vacío.
   const [filterStatus, setFilterStatus] = useState(""); // Para almacenar el estado de filtro de tareas.
   const [filterPriority, setFilterPriority] = useState(""); // Para almacenar la prioridad de filtro de tareas.
+  const [showWelcomeMessage, setShowWelcomeMessage] = useState(true); // Estado para el mensaje de bienvenida
 
   // Hook para la navegación entre rutas en la aplicación.
   const navigate = useNavigate();
@@ -99,12 +100,22 @@ const Dashboard = () => {
     const tokenValid = checkToken(); // Verifica si el token es válido.
     if (tokenValid) {
       const email = localStorage.getItem("email"); // Obtiene el correo electrónico del almacenamiento local.
+      const name = localStorage.getItem("name"); 
       fetchUserIdByEmail(email).then((userId) => {
         if (userId) {
           fetchTasks(userId); // Obtiene las tareas del usuario si se obtuvo el ID.
         }
       });
     }
+  }, []);
+
+  useEffect(() => {
+    // Ocultar el mensaje de bienvenida después de 3 segundos
+    const timer = setTimeout(() => {
+      setShowWelcomeMessage(false);
+    }, 3000);
+
+    return () => clearTimeout(timer); // Limpia el temporizador al desmontar el componente
   }, []);
 
   // Efecto que filtra las tareas según el estado y la prioridad seleccionados.
@@ -243,10 +254,11 @@ const Dashboard = () => {
   // Obtiene el token y el correo electrónico del almacenamiento local.
   const token = localStorage.getItem("token");
   const email = localStorage.getItem("email");
+  const name = localStorage.getItem("name");
 
   return (
     <div className="bg-gray-100 min-h-screen flex flex-col p-6">
-      <Sidebar email={email} token={token} />
+      <Sidebar email={email} token={token} /> 
       <div className="flex w-full bg-white rounded-lg shadow-lg p-6 space-x-6">
         <div className="flex-1 w-full max-w-md mx-auto">
           {" "}
