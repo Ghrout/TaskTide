@@ -75,6 +75,22 @@ Taskide es una potente aplicación de gestión de tareas que permite a los usuar
 - Accede a la aplicación en `http://localhost:3000`.
 - Regístrate o inicia sesión para comenzar a gestionar tus tareas de manera eficiente.
 
+## Si después de seguir los pasos no puedes ingresar sesión, asegúrate de realizar las siguientes acciones para corregir problemas relacionados con JWT y CORS:
+
+Configurar la Clave Secreta de JWT: Si encuentras problemas de autenticación relacionados con el token, asegúrate de que la clave secreta de JWT esté configurada correctamente en tu archivo .env. Si no la tienes configurada, usa el siguiente comando para generarla:
+
+```bash
+JWT_SECRET=your_secret_key
+php artisan jwt:secret
+```
+Instalar y Configurar CORS: Si tu aplicación frontend está en un dominio o puerto diferente al backend, es posible que necesites configurar CORS para permitir que las solicitudes del frontend lleguen al backend. Para ello, instala el paquete CORS con:
+
+```bash
+composer require fruitcake/laravel-cors
+
+```
+Luego, asegúrate de que la configuración de CORS permita solicitudes desde el origen de tu frontend. Revisa el archivo config/cors.php para confirmar que esté configurado correctamente.
+
 ## Contribución
 
 ¡Las contribuciones son bienvenidas! Si deseas contribuir a Taskide, sigue estos pasos:
